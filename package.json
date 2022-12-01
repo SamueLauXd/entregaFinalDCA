@@ -1,0 +1,25 @@
+{
+  "name": "clase13dca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc --watch",
+    "start": "nodemon server.js",
+    "lint": "eslint . --ext .ts",
+    "dev": "nodemon server.js --exec \"npm run lint && node\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.8.2"
+  }
+}
+

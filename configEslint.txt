@@ -1,0 +1,24 @@
+1. npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+2. touch .eslintrc
+3. añadimos al archivo eslintrc {
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
+}
+4. touch .eslintignore
+5. ignoramos node_modules/ y public/
+6. Añadimos el script lint para analizar todo el script de typescript al package.json "lint": "eslint . --ext .ts",
+7. Ejecutamos el comando para analizar npm run lint
+8. Agregamos rules al eslintrc "rules": { } https://eslint.org/docs/latest/rules/
+9. Agregamos rules para las doble quotes "quotes": ["error", "double"]
+10. Agregamos rules para semicolen siempre al final "semi": ["error", "always"]
+11. Agregamos nodemon al linter en el package para que escuche el linter y no tener que estar haciendo el comando todo el tiempo 
+"dev": "nodemon server.js --exec \"npm run lint && node server.js\""
+https://mugan86.medium.com/eslint-en-typescript-paso-a-paso-ab2255321fd
