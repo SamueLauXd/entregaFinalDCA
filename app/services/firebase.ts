@@ -25,4 +25,22 @@ const listenUsers = (notifyComponent: (register: Register[]) => void) => {
     onSnapshot(collection(db, "registered-users"), handleDbChange);
 }
 
+export const addPost = async ({ username, publicacion, comentario }: { username: string; publicacion: string; comentario: string; }) => {
+    
+    try {
+        const docRef = await addDoc(collection(db,'posts'), {
+        username,
+        publicacion,
+        comentario,
+        comentarios: 0,
+        profilephoto: './app/assets/perfil.jpg'
+        });
+        console.log(docRef.id);
+        return true;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
 export default { onRegister, listenUsers};

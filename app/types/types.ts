@@ -6,6 +6,19 @@ export interface Register {
     post?: string;
 }
 
+export interface UserShape {
+    user: string;
+    post: string;
+}
+
+const user: UserShape[] = [
+    {
+    'user' : 'selfmadesamuel',
+    'post' : 'post'
+    }
+];
+export default user;
+
 
 export interface FireRegisterResponse {
     data: () => Register;
